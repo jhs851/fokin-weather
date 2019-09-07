@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Learning React Native by Building Foking Weather App",
+    "githubUrl": "https://github.com/jhs851/fokin-weather"
   }
 }
