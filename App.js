@@ -4,6 +4,7 @@ import axios from "axios";
 import {stringify} from "query-string";
 import Loading from "./Loading";
 import Location from "./Location";
+import {StatusBar, View, StyleSheet} from "react-native";
 
 export default class App extends React.Component {
     static OPENWEATHERMAP_KEY = '7ff3c3145761ca9fd4179dd880ae574c';
@@ -52,10 +53,21 @@ export default class App extends React.Component {
     render() {
         const { isLoading, temp, condition } = this.state;
 
-        return (
-            isLoading
+        return <View style={styles.container}>
+            <StatusBar barStyle="light-content" />
+
+            {isLoading
                 ? <Loading />
                 : <Weather temp={temp} condition={condition} />
-        );
+            }
+        </View>;
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+});
